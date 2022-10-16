@@ -12,7 +12,7 @@ Route::post('/categories',[CategoryController::class, 'store'])
 Route::get('/categories/create',[CategoryController::class, 'create'])
     ->name('category.create');
 
-Route::get('/categories/{category}', [CategoryController::class, 'edit'])
+Route::get('/categories/{category}/edit', [CategoryController::class, 'edit'])
     ->name('category.edit');    
 
 Route::post('/categories/{category}', [CategoryController::class, 'update'])
