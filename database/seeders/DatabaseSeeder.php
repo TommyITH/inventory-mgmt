@@ -2,7 +2,11 @@
 
 namespace Database\Seeders;
 
+use App\Models\Category;
+use App\Models\Supplier;
 use Database\Seeders\UserSeeder;
+use Database\Seeders\CategorySeeder;
+use Database\Seeders\SupplierSeeder;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
@@ -16,7 +20,10 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         $this->call([
-            UserSeeder::class
+            UserSeeder::class,
+            CategorySeeder::class,
+            SupplierSeeder::class
+
         ]);
     }
 }
