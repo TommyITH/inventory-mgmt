@@ -43,13 +43,16 @@ class ProductController extends Controller
     public function store(StoreProductRequest $request)
     {
         $validatedRequest = $request->validated();
-
+         
         $product = new Product();
         $product->name = trim($validatedRequest['name']);
         $product->price = trim($validatedRequest['price']);
-        $product->photo = trim($validatedRequest['photo']);
-        $product->category = trim($validatedRequest['category']);
-        $product->supplier = trim($validatedRequest['supplier']);
+
+        $productPhoto = $request->file('photo')->store('products');
+        $product->photo = $productPhoto;
+
+        $product->category_id = trim($request->input('category'));
+        $product->supplier_id = trim($request->input('supplier'));
         $product->save();
 
         return redirect()->route('product.index');

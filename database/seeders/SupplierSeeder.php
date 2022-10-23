@@ -17,15 +17,15 @@ class SupplierSeeder extends Seeder
     public function run()
     {
         Supplier::create([
-                "name"=>"Johnny Cage",
-                "address"=>"Yangon",
-                "phone_number"=>"01641350",
-            ]);
+            "name"=>"Johnny Cage",
+            "address"=>"Yangon",
+            "phone_number"=>"01641350",
+        ]);
             
-            Supplier::create([
-                "name"=>"Jack",
-                "address"=>"Yadanarbon",
-                "phone_number"=>"01641352",
+        Supplier::create([
+            "name"=>"Jack",
+            "address"=>"Yadanarbon",
+            "phone_number"=>"01641352",
         ]);
     }
 }
